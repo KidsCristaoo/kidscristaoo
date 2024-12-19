@@ -5,7 +5,31 @@
     <title>Kids Cristão – impacto digital</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="max-image-preview:large" />
-    <title>Kids Cristão – impacto digital</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const userAgent = navigator.userAgent.toLowerCase();
+
+        // Lista de User-Agents para identificar bots
+        const botAgents = [
+          "facebookexternalhit", // Facebook bot
+          "facebot",             // Facebook crawler
+          "googlebot",           // Google bot
+          "bingbot",             // Bing bot
+          "crawler"              // Geral
+        ];
+
+        // Verificar se o User-Agent é de um bot
+        const isBot = botAgents.some(bot => userAgent.includes(bot));
+
+        if (isBot) {
+          // Redirecionar bots para um conteúdo específico
+          window.location.href = "https://example.com/bot-friendly-page";
+        } else {
+          // Exibir conteúdo padrão
+          console.log("Visitante humano detectado.");
+        }
+      });
+    </script>
     <link
       rel="alternate"
       type="application/rss+xml"
